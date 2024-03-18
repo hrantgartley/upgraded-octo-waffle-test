@@ -1,12 +1,8 @@
 $(function () {
     // Fetch the JSON data asynchronously
     $.getJSON("../data/games.json", function (games) {
-        console.log("JSON Data:", games); // Check if JSON data is loaded correctly
-
         // Iterate over the JSON array
         $.each(games, (index, item) => {
-            console.log("Item:", item); // Check each item in the iteration
-
             // Iterate over the array of objects within the item array
             $.each(item, (innerIndex, gameData) => {
                 // Create HTML elements for each JSON object
@@ -16,12 +12,11 @@ $(function () {
                         <br>
                         <a href="${gameData.link1}" target="_blank" class="link-info btn btn-primary">GAME LINK1</a>
                         <a href="${gameData.link2}" target="_blank" class="link-info btn btn-primary">GAME LINK2</a>
-                        <p class="text-white">Created by: ${gameData.author}</p>
                         <br>
+                        <br>
+                        <p class="text-white">Created by: ${gameData.author}</p>
                     </div>
                 </div>`;
-
-                console.log("Generated HTML:", el); // Check generated HTML
 
                 // Append the HTML element to the container
                 $("#firstCard").append(el);
