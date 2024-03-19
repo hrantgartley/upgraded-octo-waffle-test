@@ -1,4 +1,4 @@
-$(function () {
+/* $(function () {
     // Fetch the JSON data asynchronously
     $.getJSON("../data/games.json", function (games) {
         // Iterate over the JSON array
@@ -30,13 +30,12 @@ $(function () {
             });
         });
     });
-});
-
-/* 
-$(function () {
+}); */
+$(() => {
     $.ajax({
-        url: "https://github.com/hrantgartley/upgraded-octo-waffle-test/blob/main/data/games.json",
-        dataType: "jsonp",
+        url: "https://raw.githubusercontent.com/hrantgartley/376-labs/main/golf/data/games.json",
+        type: "GET",
+        dataType: "json",
         success: function (games) {
             console.log("JSON Data:", games); // Check if JSON data is loaded correctly
 
@@ -66,12 +65,11 @@ $(function () {
                     // Append the author to the navigation dropdown
                     $(".nav-dropdown").append(
                         $(
-                            `<li><a href="#!" class="dropdown-item">${gameData.author}</a></li>`,
-                        ),
+                            `<li><a href="#!" class="dropdown-item">${gameData.author}</a></li>`
+                        )
                     );
                 });
             });
         }
     });
 });
- */
