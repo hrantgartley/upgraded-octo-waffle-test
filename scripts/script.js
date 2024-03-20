@@ -31,9 +31,10 @@
         });
     });
 }); */
-$(() => {
+
+$(function () {
     $.ajax({
-        url: "https://raw.githubusercontent.com/hrantgartley/376-labs/main/golf/data/games.json",
+        url: "data/games.json",
         type: "GET",
         dataType: "json",
         success: function (games) {
